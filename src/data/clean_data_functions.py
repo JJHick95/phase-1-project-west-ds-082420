@@ -32,6 +32,18 @@ def get_all_youth_db():
     
     return skc_allRes_df
 
+def get_oy_2016_db():
+    
+    #fetching all opportunity youth from south king county in 2016
+    
+    csv_file_name = 'ss16pwa.csv'
+    oy_2016_df = pd.read_csv(csv_file_name)
+    puma_mask = oy_2016_df['PUMA'].isin(['11610', '11611', '11612', '11613', '11614', '11615'])
+    oy_2016_df = oy_2016_df.loc[puma_mask]
+    oy_mask = (oy_2016_df['AGEP'] >= 16) & (oy_2016_df['AGEP'] <= 24) & (oy_2016_df['SCH'].isin(['1'])) & (oy_2016_df['ESR'].isin(['3', '6']))
+    oy_2016_df = oy_2016_df.loc[oy_mask]
+    return oy_2016_df
+
 
 def get_skc_oy_race():
     '''
