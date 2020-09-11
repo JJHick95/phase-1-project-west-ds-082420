@@ -73,6 +73,29 @@ def get_skc_all_youth_race():
     return out_dict
 
 
+def get_pums_youth_count():
+    '''
+    returns a dictionary with puma ID number as keys and their corresponding total youth count as values
+    '''
+    skc_all_youth_df = get_all_youth_db()
+    
+    puma_breakdown = skc_all_youth_df.groupby(by='puma').sum()['pwgtp']
+    return puma_breakdown.to_dict()
+
+
+def get_pums_oy_count():
+    '''
+    returns a dictionary with puma ID number as keys and their corresponding opportunity youth count as values
+    '''
+    skc_oy_df = get_oy_db()
+    
+    puma_breakdown = skc_oy_df.groupby(by='puma').sum()['pwgtp']
+    return puma_breakdown.to_dict()
+
+
+
+
+
 
 
 
