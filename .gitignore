@@ -1,3 +1,6 @@
+# .csv files
+**/ss16pwa.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
