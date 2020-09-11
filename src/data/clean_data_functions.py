@@ -57,7 +57,7 @@ def get_skc_all_youth_race():
     '''
     returns a dictionary with race names as keys and their coresponding pop_count as values for all skc youth
     '''
-    
+    skc_allRes_df = get_all_youth_db()
     
     race_dict = {'1': 'White', '2': 'Black/ African American',
                  '3': 'American Indian or Alaska Native', '4': 'American Indian or Alaska Native',
