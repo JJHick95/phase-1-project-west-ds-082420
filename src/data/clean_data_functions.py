@@ -105,6 +105,19 @@ def get_pums_oy_count():
     return puma_breakdown.to_dict()
 
 
+def get_puma_oy_percentages():
+    '''
+    returns a dictionary with puma ID number as keys and percentage of OY in their population as values
+    '''
+    
+    puma_oy_breakdown = get_pums_oy_count()
+    puma_total_breakdown = get_pums_youth_count()
+    puma_percentages = {}
+    for key in puma_oy_breakdown.keys():
+        puma_percentages[key] = round((puma_oy_breakdown[key]/puma_total_breakdown[key]) * 100, 1)
+    
+    return puma_percentages
+
 
 
 
