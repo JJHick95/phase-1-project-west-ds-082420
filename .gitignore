@@ -137,3 +137,13 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# shape files
+.shp/
+.cpg/
+.dbf/
+.prj/
+.shp.xml/
+.shp.iso.xml/
+.shp.ea.iso.xml/
+.shx/
