@@ -5,6 +5,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
 # C extensions
 *.so
 
@@ -139,3 +140,13 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# shape files
+.shp/
+.cpg/
+.dbf/
+.prj/
+.shp.xml/
+.shp.iso.xml/
+.shp.ea.iso.xml/
+.shx/
