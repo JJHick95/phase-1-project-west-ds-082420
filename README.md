@@ -1,9 +1,18 @@
-# South King County Opportunity Youth
+#Phase 1 Project - Opportunity Youth in South King County
 (All counties south of Seattle)
 
 This project offers an updated estimate of the number of Opportunity Youth in South King County using the 2017 5-year American Community Survey [(ACS)](https://www.census.gov/programs-surveys/acs/about.html) Public Use Microdata Survey [(PUMS)](https://www.census.gov/programs-surveys/acs/technical-documentation/pums.html).
 
 ## THIS REPOSITORY
+
+### Our Methods
+
+After downloading the data and reading it into a psql database, we queried for all pums_2017 records in south king county (puma# 11610-11615 inclusive) and stored the result in a pandas dataframe object. We also ran a query that filtered out all records that did not qualify as opportunity youth and stored the result in a separate pandas dataframe. We created several functions to pull selected statistics from those pandas dataframes and return dictionaries that are easy to work with that contain those clean data statistics. We also used the pandas dataframes to build our updated opportunity youth age breakdown tables by systematically building each row of data in a 2d list.
+
+To create the cartographic visuals for 2017 Opportunity Youth census data, we obtained 2017 data from the census database through an SQL Query. After successfully gathering and we used pandas and geopandas to create dataframes with further narrowed the data. This contained only information about Opportunity Youth in South King County, separated by PUMA, which are regions defined by the US census. Using shapefiles obtained from the US census website, we created geopandas dataframes of the regions within king county, as well as Washington state as a whole. Finally, we plotted the regions of King county, color coating them for various visualizations into separate png image files. The visualizations included distinguishing regions by color and representing total Opportunity Youth population by color, in the form of choropleth maps.
+
+To obtain various visuals for the exploration of opportunity youth data in south King County over the years 2016 and 2017, we needed access to pums_2017.sql and ss16pwa.csv. Using the information within these files, we were able to form dictionaries of keys and values that were used for the creation of our visualizations. We used matplotlib, pandas, and psycopg2 packages for the creation of our bar and line graphs. These graphs were then used to gain insight into certain demographics within the opportunity youth of south King County. The insight gained from our visuals allowed us to provide recommendations to the Seattle Region Partnership (SRP) for certain groups within the opportunity youth population where we saw fit.
+
 
 ### Setup Instructions
 
